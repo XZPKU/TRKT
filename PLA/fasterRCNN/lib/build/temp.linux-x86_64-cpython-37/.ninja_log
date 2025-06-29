@@ -1,0 +1,13 @@
+# ninja log v5
+5	9015	1708844615636862840	/home/wangguan/PLA/fasterRCNN/lib/build/temp.linux-x86_64-cpython-37/home/wangguan/PLA/fasterRCNN/lib/model/csrc/cuda/nms.o	fc0f275892b3a2c7
+4	9017	1708844615644862828	/home/wangguan/PLA/fasterRCNN/lib/build/temp.linux-x86_64-cpython-37/home/wangguan/PLA/fasterRCNN/lib/model/csrc/cuda/ROIPool_cuda.o	6c1f195dd4bae153
+4	9019	1708844615652862817	/home/wangguan/PLA/fasterRCNN/lib/build/temp.linux-x86_64-cpython-37/home/wangguan/PLA/fasterRCNN/lib/model/csrc/cuda/ROIAlign_cuda.o	c2dcd2218eefc71c
+4	13469	1708844620092856403	/home/wangguan/PLA/fasterRCNN/lib/build/temp.linux-x86_64-cpython-37/home/wangguan/PLA/fasterRCNN/lib/model/csrc/cpu/nms_cpu.o	4e611bf4bec95868
+4	14077	1708844620700855525	/home/wangguan/PLA/fasterRCNN/lib/build/temp.linux-x86_64-cpython-37/home/wangguan/PLA/fasterRCNN/lib/model/csrc/cpu/ROIAlign_cpu.o	24466c810d0c6ddd
+5	16508	1708844623112852043	/home/wangguan/PLA/fasterRCNN/lib/build/temp.linux-x86_64-cpython-37/home/wangguan/PLA/fasterRCNN/lib/model/csrc/vision.o	68b7294f0660f389
+6	8639	1708844632896837939	/home/wangguan/PLA/fasterRCNN/lib/build/temp.linux-x86_64-cpython-37/home/wangguan/PLA/fasterRCNN/lib/model/csrc/cuda/ROIPool_cuda.o	eaa2b2d23387471c
+6	8771	1708844633028837748	/home/wangguan/PLA/fasterRCNN/lib/build/temp.linux-x86_64-cpython-37/home/wangguan/PLA/fasterRCNN/lib/model/csrc/cuda/nms.o	67c4015ba9107199
+6	9157	1708844633428837172	/home/wangguan/PLA/fasterRCNN/lib/build/temp.linux-x86_64-cpython-37/home/wangguan/PLA/fasterRCNN/lib/model/csrc/cuda/ROIAlign_cuda.o	6abbe39c9ab7343d
+5	13357	1708844637532831265	/home/wangguan/PLA/fasterRCNN/lib/build/temp.linux-x86_64-cpython-37/home/wangguan/PLA/fasterRCNN/lib/model/csrc/cpu/nms_cpu.o	cdd937a60dcbed2d
+5	13378	1708844637640831111	/home/wangguan/PLA/fasterRCNN/lib/build/temp.linux-x86_64-cpython-37/home/wangguan/PLA/fasterRCNN/lib/model/csrc/cpu/ROIAlign_cpu.o	a7310118bac8ac7
+7	16636	1708844640876826457	/home/wangguan/PLA/fasterRCNN/lib/build/temp.linux-x86_64-cpython-37/home/wangguan/PLA/fasterRCNN/lib/model/csrc/vision.o	307f0a208717089f

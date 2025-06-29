@@ -1,0 +1,24 @@
+gpu_id: 3
+multi_gpus: False
+num_workers: 4
+mode: 'sgdet'
+transformer_mode: 'img'
+
+optimizer: 'adamw'
+lr: 0.00001
+nepoch: 5
+enc_layer: 1
+dec_layer: 3
+bce_loss: True
+is_wks: True
+feat_dim: 2048
+pseudo_way: 0
+remove_one_frame_video: False
+union_box_feature: True
+
+save_path: 'models/oneframe_refine_wo_raft/'
+model_path: 'models/oneframe_refine_wo_raft/'
+data_path: '/network_space/server126/shared/xuzhu/CSA/clean_version/data/action-genome'
+datasize: 'large'
+ckpt: None
+ws_object_bbox_path: 'annotations/weak/gt_annotation_thres02_keep1.pkl'

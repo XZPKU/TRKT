@@ -1,0 +1,13 @@
+# ninja log v5
+19	7418	1694530578825114272	/home/wangguan/PLA/fasterRCNN/lib/build/temp.linux-x86_64-3.7/home/wangguan/PLA/fasterRCNN/lib/model/csrc/cuda/nms.o	ed2a10e651e105ba
+20	7649	1694530579057114610	/home/wangguan/PLA/fasterRCNN/lib/build/temp.linux-x86_64-3.7/home/wangguan/PLA/fasterRCNN/lib/model/csrc/cuda/ROIAlign_cuda.o	d691cb848bb8ae0c
+20	7864	1694530579273114924	/home/wangguan/PLA/fasterRCNN/lib/build/temp.linux-x86_64-3.7/home/wangguan/PLA/fasterRCNN/lib/model/csrc/cuda/ROIPool_cuda.o	279c60fdb3402bb8
+19	11987	1694530583389120881	/home/wangguan/PLA/fasterRCNN/lib/build/temp.linux-x86_64-3.7/home/wangguan/PLA/fasterRCNN/lib/model/csrc/cpu/ROIAlign_cpu.o	4f122d50cddfb475
+18	13143	1694530584545122542	/home/wangguan/PLA/fasterRCNN/lib/build/temp.linux-x86_64-3.7/home/wangguan/PLA/fasterRCNN/lib/model/csrc/cpu/nms_cpu.o	8f2de3b2304edd8b
+17	16774	1694530588177127724	/home/wangguan/PLA/fasterRCNN/lib/build/temp.linux-x86_64-3.7/home/wangguan/PLA/fasterRCNN/lib/model/csrc/vision.o	f115f9c9cdf302f3
+4	7514	1694530597909141345	/home/wangguan/PLA/fasterRCNN/lib/build/temp.linux-x86_64-3.7/home/wangguan/PLA/fasterRCNN/lib/model/csrc/cuda/nms.o	f0914f2c5629a742
+5	7603	1694530597993141461	/home/wangguan/PLA/fasterRCNN/lib/build/temp.linux-x86_64-3.7/home/wangguan/PLA/fasterRCNN/lib/model/csrc/cuda/ROIAlign_cuda.o	9056d48b132e5c88
+5	7843	1694530598237141797	/home/wangguan/PLA/fasterRCNN/lib/build/temp.linux-x86_64-3.7/home/wangguan/PLA/fasterRCNN/lib/model/csrc/cuda/ROIPool_cuda.o	2264d06bb1172074
+4	11069	1694530601321146030	/home/wangguan/PLA/fasterRCNN/lib/build/temp.linux-x86_64-3.7/home/wangguan/PLA/fasterRCNN/lib/model/csrc/cpu/ROIAlign_cpu.o	5e64d62d63514c2
+3	11130	1694530601517146298	/home/wangguan/PLA/fasterRCNN/lib/build/temp.linux-x86_64-3.7/home/wangguan/PLA/fasterRCNN/lib/model/csrc/cpu/nms_cpu.o	d69b19072093eb8d
+3	14828	1694530605213151318	/home/wangguan/PLA/fasterRCNN/lib/build/temp.linux-x86_64-3.7/home/wangguan/PLA/fasterRCNN/lib/model/csrc/vision.o	1b32b7f099115b1

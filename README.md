@@ -20,8 +20,10 @@ Following PLA/environment.yaml to construct the virtual environment.
            | -- AG_detection_results_refine 
 | -- refine
       | -- output # pre-trained relation aware transformer weight
+             |--checkpoint.pth
 | -- PLA
       | -- model # pre-trained scene graphe generation weight
+             |--model.tar
 | -- RAFT
       
 ```

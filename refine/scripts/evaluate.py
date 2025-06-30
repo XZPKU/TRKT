@@ -36,7 +36,7 @@ def run_train(device='0', layer_to_det=24, tag='evaluate'):
                     --output_dir output/{tag} \
                     --num_refines 0 \
                     --num_workers 2 \
-                    --resume output/raft_previous_merge_proposal/checkpoint_best.pth \
+                    --resume output/checkpoint.pth \
                     --eval \
                     --ext_det \
                     --cam_thr 0.2 \

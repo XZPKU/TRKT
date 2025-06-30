@@ -16,8 +16,8 @@ pseudo_way: 0
 remove_one_frame_video: False
 union_box_feature: True
 
-save_path: 'models/oneframe_refine_wo_raft/'
-model_path: 'models/oneframe_refine_wo_raft/'
+save_path: 'models/oneframe_refine/'
+model_path: 'models/model.tar'
 data_path: '/network_space/server126/shared/xuzhu/CSA/clean_version/data/action-genome'
 datasize: 'large'
 ckpt: None

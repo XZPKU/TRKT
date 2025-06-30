@@ -25,7 +25,7 @@ IOUmatch: True
 label_fusion_strategy: 1
 
 save_path: 'models/final_refine/'
-model_path: 'models/final_refine/model_3.tar'
+model_path: 'models/model.tar'
 data_path: '/network_space/server126/shared/xuzhu/CSA/clean_version/data/action-genome'
 datasize: 'large'
 ckpt: None

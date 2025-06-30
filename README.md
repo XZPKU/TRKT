@@ -38,7 +38,7 @@ python scripts/evaluate.py # evaluate the performance of object detection
 | Model  | AP@1 |AP@10|AR@1 | AR@10|Weight|
 | --- | ----------- |----- |----- |----- |----- |
 |PLA(baseline)    | 11.4 |11.6 |33.3 |37.6| -|
-| Ours  | 24.3|26.6|30.2|45.1|[weight](https://pan.baidu.com/s/11y79PFA7RoULOfT_OxR3-A) password 1234|
+| Ours  | 23.0|25.2|28.8|43.8|[weight](https://pan.baidu.com/s/11y79PFA7RoULOfT_OxR3-A) password 1234|
 
 ### Scene Graph Generation Performance on DSGG(PLA) Model
 ```

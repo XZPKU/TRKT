@@ -2198,9 +2198,7 @@ def evaluate_save_det(model, criterion, postprocessors, data_loader, device, out
         need_save = False
         for i in range(len(targets)):
             vid, frame = data_loader.dataset.coco.imgs[targets[i]['image_id'].item()]['file_name'].split('/')[1:]
-            # save_root = os.path.join('/home/wangguan/SPE-master/data/wk_detection_results_full005_ckpt15', vid, frame)
-            # save_root = os.path.join('/network_space/server127/shared/vidvrd/action-genome/weak_test_add_raft_11_8',vid,frame)
-            save_root = os.path.join('/network_space/server127/shared/vidvrd/action-genome/weak_test_wo_raft_11_8',vid,frame)
+            save_root = os.path.join('/network_space/server127/shared/vidvrd/action-genome/AG_detection_results_refine',vid,frame)
             if not os.path.exists(save_root):
                 os.makedirs(save_root)
             det_path = os.path.join(save_root, 'dets.npy')
@@ -2221,16 +2219,7 @@ def evaluate_save_det(model, criterion, postprocessors, data_loader, device, out
         raft_tensor = torch.stack(raft,dim=0)
         previous_nested = utils.nested_tensor_from_tensor_list(previous_tensor)
         previous_output = model(previous_nested)
-        # outputs_from_model, memory = model(samples, return_memory=True)
-        # outputs = outputs_from_model[refine_stage]['aux_outputs'][-1]
-
-
-        # cls_dict = {'x_logits': outputs_from_model[0]['x_logits'], 
-        #             'x_cls_logits': outputs_from_model[0]['x_cls_logits']}
-        # results = postprocessors['bbox'](outputs, orig_target_sizes, need_scale=False, cls_dict=cls_dict) #TODO
-
-
-
+      
         ########################################
         detections = []
         for i in range(len(targets)):
@@ -2255,9 +2244,7 @@ def evaluate_save_det(model, criterion, postprocessors, data_loader, device, out
             results.append({})
 
             vid, frame = data_loader.dataset.coco.imgs[targets[i]['image_id'].item()]['file_name'].split('/')[1:]
-            #save_root = os.path.join('/home/wangguan/SPE-master/data/wk_detection_results_full005_ckpt15', vid, frame)
-            # save_root = os.path.join('/network_space/server127/shared/vidvrd/action-genome/weak_test_add_raft_11_8',vid,frame)
-            save_root = os.path.join('/network_space/server127/shared/vidvrd/action-genome/weak_test_wo_raft_11_8',vid,frame)
+            save_root = os.path.join('/network_space/server127/shared/vidvrd/action-genome/AG_detection_results_refine',vid,frame)
             if not os.path.exists(save_root):
                 os.makedirs(save_root)
             det_path = os.path.join(save_root, 'dets.npy')
@@ -2280,21 +2267,9 @@ def evaluate_save_det(model, criterion, postprocessors, data_loader, device, out
             img_h, img_w = orig_target_sizes[i]
             scale_fct = torch.stack([img_w, img_h, img_w, img_h], dim=-1)
             results[i]['boxes'] = results[i]['boxes'] * scale_fct
-
-            ## multi-step fusion
             attn_seed_proposals[i]['boxes'] = box_ops.box_cxcywh_to_xyxy(attn_seed_proposals[i]['boxes']).clamp(min=0) * scale_fct
             results[i] = attention_map_wbf_fusion(attn_seed_proposals[i], results[i], scale_fct)
             
-            
-            ###### add raft merge ##############3
-            # attn_seed_proposals_previous[i]['boxes'] = box_ops.box_cxcywh_to_xyxy(attn_seed_proposals_previous[i]['boxes']).clamp(min=0) * scale_fct
-            # results[i] = attention_map_wbf_fusion(attn_seed_proposals_previous[i], results[i], scale_fct)
-            ##################################
-
-            # # only one-step fusion
-            # # results[i] = attn_seed_proposals[i]
-            # results[i] = sp
-            # results[i]['boxes'] = box_ops.box_cxcywh_to_xyxy(results[i]['boxes']).clamp(min=0) * scale_fct
 
             keep_boxes_ts = results[i]['boxes'] / scale_fct
 
@@ -2321,111 +2296,12 @@ def evaluate_save_det(model, criterion, postprocessors, data_loader, device, out
         ###############################
 
 
-        # detections = []
-        # for i in range(len(targets)):
-        #     detections.append({})
-        #     det_boxes = targets[i]['det_boxes']
-        #     det_boxes = box_ops.box_cxcywh_to_xyxy(det_boxes).clamp(min=0)
-        #     detections[i]['boxes'] = det_boxes
-        #     detections[i]['labels'] = targets[i]['det_labels']
-        #     detections[i]['scores'] = targets[i]['det_scores']
 
 
-        # for i, r in enumerate(results):
-        #     pred_boxes = r['boxes']
-        #     pred_scores= r['scores']
-        #     pred_labels= r['labels']
-        #     pred_classes = r['labels'].unique()
-        #     keep_boxes = []
-        #     keep_scores= []
-        #     keep_labels= []
-        #     img_h, img_w = orig_target_sizes[i]
-        #     scale_fct = torch.tensor([img_w, img_h, img_w, img_h]).to(pred_boxes.device)
-        #     for pc in pred_classes.tolist():
-        #         keep_idx = (r['labels'] == pc).nonzero(as_tuple=False).reshape(-1)
-        #         cls_pred_boxes, cls_pred_score, cls_pred_labels = pred_boxes[keep_idx], pred_scores[keep_idx], pred_labels[keep_idx]
-        #         # keep_box_idx = torchvision.ops.nms(cls_pred_boxes, cls_pred_score, iou_threshold=0.5)
-        #         # keep_boxes.append(cls_pred_boxes[keep_box_idx])
-        #         # keep_scores.append(cls_pred_score[keep_box_idx])
-        #         # keep_labels.append(cls_pred_labels[keep_box_idx])
 
-                
-        #         ##################
-        #         if sum(keep_idx) > 1:
-        #             order = cls_pred_score.argsort(descending=True)
-        #             cls_pred_boxes = cls_pred_boxes[order]
-        #             cls_pred_score = cls_pred_score[order]
-        #             # idx = nms(cls_pred_boxes, cls_pred_score)
-        #             scaled_pred_boxes = cls_pred_boxes * scale_fct
-        #             idx = soft_nms(scaled_pred_boxes, cls_pred_score, cuda=1) # TODO
-        #             # idx = diou_nms(cls_pred_boxes, cls_pred_score)
 
-        #             cls_pred_boxes = cls_pred_boxes[idx]
-        #             cls_pred_labels = cls_pred_labels[idx]
-        #             cls_pred_score = cls_pred_score[idx]
-        #         #################
-        #         keep_boxes.append(cls_pred_boxes)
-        #         keep_scores.append(cls_pred_score)
-        #         keep_labels.append(cls_pred_labels)
 
-        #     keep_boxes_ts = torch.cat(keep_boxes)
-        #     results[i]['boxes'] = keep_boxes_ts #* scale_fct
-        #     results[i]['scores'] = torch.cat(keep_scores)
-        #     results[i]['labels'] = torch.cat(keep_labels)
 
-        #     threshold = 0.2
-        #     keep_idx = (results[i]['scores'] > threshold).nonzero(as_tuple=False).reshape(-1)
-        #     results[i]['boxes'] = results[i]['boxes'][keep_idx]
-        #     results[i]['scores'] = results[i]['scores'][keep_idx]
-        #     results[i]['labels'] = results[i]['labels'][keep_idx]
-        #     keep_boxes_ts = results[i]['boxes']
-
-        #     ###############
-        #     results[i]['boxes'], results[i]['scores'], results[i]['labels'] = \
-        #             weighted_boxes_fusion([results[i]['boxes'], detections[i]['boxes']], [results[i]['scores'], detections[i]['scores']], [results[i]['labels'], detections[i]['labels']], \
-        #                                 iou_thr=0.5)
-        #     results[i]['boxes'] = torch.tensor(results[i]['boxes']).float().cuda()
-        #     keep_boxes_ts = results[i]['boxes']
-        #     results[i]['boxes'] *= scale_fct
-        #     results[i]['scores'] = torch.tensor(results[i]['scores']).float().cuda()
-        #     results[i]['labels'] = torch.tensor(results[i]['labels']).int().cuda()
-        #     ###############
-
-            
-        #     # if data_loader.dataset.coco.loadImgs(targets[i]['image_id'].item())[0]["file_name"].split('frames/')[1] == '0BH84.mp4/000395.png':
-        #     #     pdb.set_trace()
-        #     # else:
-        #     #     print(data_loader.dataset.coco.loadImgs(targets[i]['image_id'].item())[0]["file_name"].split('frames/')[1])
-        #     #     continue
-
-        #     # obtain the roi feature according to the boxes
-        #     bs, N, mapped_h, mapped_w = samples.tensors.shape
-        #     mapped_fct = torch.tensor([mapped_w, mapped_h, mapped_w, mapped_h]).to(keep_boxes_ts.device)
-        #     mapped_boxes = keep_boxes_ts * mapped_fct
-        #     mapped_boxes = torch.cat([torch.zeros(len(mapped_boxes), 1).to(mapped_boxes), mapped_boxes], dim=-1)
-        #     memory_h, memory_w = outputs_from_model[refine_stage]['cams_cls'].shape[2:]
-        #     memory_mat = memory[:, i, :].permute(1, 0).reshape(1, memory.shape[-1], memory_h, memory_w)
-        #     roi_features = roi_align_ops(memory_mat, mapped_boxes).mean(dim=[2,3]).cpu().numpy()
-
-        #     save_det_list = []
-        #     for ridx in range(len(results[i]['boxes'])):
-        #         det_dict = {}
-        #         det_dict['rect'] = results[i]['boxes'][ridx].cpu().tolist()
-        #         det_dict['conf'] = results[i]['scores'][ridx].cpu().tolist()
-        #         det_dict['class'] = results[i]['labels'][ridx].cpu().tolist()
-        #         save_det_list.append(det_dict)
-
-        #     vid, frame = data_loader.dataset.coco.imgs[targets[i]['image_id'].item()]['file_name'].split('/')[1:]
-        #     save_root = os.path.join('/home/wangguan/SPE-master/data/wk_detection_results_weighted', vid, frame)
-        #     if not os.path.exists(save_root):
-        #         os.makedirs(save_root)
-        #     det_path = os.path.join(save_root, 'dets.npy')
-        #     feat_path = os.path.join(save_root, 'feat.npy')
-        #     if os.path.exists(det_path) and os.path.exists(feat_path):
-        #         continue
-        #     # pdb.set_trace()
-        #     np.save(det_path, save_det_list)
-        #     np.save(feat_path, roi_features)
 
 
 @torch.no_grad()

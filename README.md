@@ -1,5 +1,6 @@
 # KIKT:Weakly Supervised Dynamic Scene Graph Generation with Temporal-enhanced In-domain Knowledge Transferring
 
+![](/assets/pipeline_v3.png)
 ## Installation
 Following PLA/env.yaml to construct the virtual environment.
 

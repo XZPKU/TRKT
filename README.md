@@ -1,4 +1,4 @@
-# KIKT:Weakly Supervised Dynamic Scene Graph Generation with Temporal-enhanced In-domain Knowledge Transferring
+# TIKT:Weakly Supervised Dynamic Scene Graph Generation with Temporal-enhanced In-domain Knowledge Transferring
 
 ![](/assets/pipeline_v3.png)
 ## Installation
@@ -53,7 +53,7 @@ python test.py --cfg configs/final.yml # for final scene graph generation perfor
 ## Training
 
 ### Step1. Optical Flow Extraction
-We use [RAFT](https://github.com/princeton-vl/RAFT) to generate the optical flow in our data, you can either use our pre-processed optical flow (stored in []()) or generate them on you own by following steps:
+We use [RAFT](https://github.com/princeton-vl/RAFT) to generate the optical flow in our data, you can either use our pre-processed optical flow (stored in [Link](https://pan.baidu.com/s/1_b9CM8omaNwXUQsNTIfA5Q)) or generate them on you own by following steps:
 
 ```
 cd ~/RAFT   ## download the RAFT ckpt accordingly

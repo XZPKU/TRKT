@@ -23,7 +23,7 @@ Following PLA/env.yaml to construct the virtual environment.
       | -- output # pre-trained relation aware transformer weight
              |--checkpoint.pth
 | -- PLA
-      | -- model # pre-trained scene graphe generation weight
+      | -- models # pre-trained scene graphe generation weight
              |--model.tar
 | -- RAFT
       
@@ -33,7 +33,7 @@ Following PLA/env.yaml to construct the virtual environment.
 
 ### Object Detection Performance on Relation-Aware Transformer(TIKT) Model
 ```
-cd ~/refine
+cd refine
 python scripts/evaluate.py # evaluate the performance of object detection
 ```
 | Model  | AP@1 |AP@10|AR@1 | AR@10|Weight|
@@ -43,7 +43,7 @@ python scripts/evaluate.py # evaluate the performance of object detection
 
 ### Scene Graph Generation Performance on DSGG(PLA) Model
 ```
-cd ~/PLA
+cd PLA
 python test.py --cfg configs/final.yml # for final scene graph generation performance evaluation
 ```
 | Model  | W/R@10|W/R@20|W/R@50|N/R@10|N/R@20|N/R@50|weight|
@@ -56,19 +56,19 @@ python test.py --cfg configs/final.yml # for final scene graph generation perfor
 We use [RAFT](https://github.com/princeton-vl/RAFT) to generate the optical flow in our data, you can either use our pre-processed optical flow (stored in [Link](https://pan.baidu.com/s/1_b9CM8omaNwXUQsNTIfA5Q)) or generate them on you own by following steps:
 
 ```
-cd ~/RAFT   ## download the RAFT ckpt accordingly
+cd RAFT   ## download the RAFT ckpt accordingly
 python process_optical_flow.py
 python post_process.py
 ```
 Then place the generated optical flow file for train and test set under folder ~/data/action-genome/.
 ### Step2. Relation-aware Refine Model Training
 ```
-cd ~/refine
+cd refine
 python scripts/train.py 
 ```
 ### Step3. Scene Graph Generation Model Training
 ```
-cd ~/PLA
+cd PLA
 python train.py --cfg configs/oneframe.yml # after this line training, select the best oneframe ckpt as the model_path parameter in oneframe.yml for next line training
 python train.py --cfg configs/final.yml # for video SGG model
 ```

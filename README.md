@@ -1,4 +1,4 @@
-# TIKT:Weakly Supervised Dynamic Scene Graph Generation with Temporal-enhanced In-domain Knowledge Transferring
+# TRKT:Weakly Supervised Dynamic Scene Graph Generation with Temporal-enhanced Relation-aware Knowledge Transferring
 
 ![](/assets/pipeline_v3.png)
 ## Installation

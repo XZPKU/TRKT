@@ -1,4 +1,11 @@
 # TRKT:Weakly Supervised Dynamic Scene Graph Generation with Temporal-enhanced Relation-aware Knowledge Transferring
+[![arXiv](https://img.shields.io/badge/arXiv-<2508.04943>-<COLOR>.svg)]([https://arxiv.org/abs/<INDEX>](https://arxiv.org/abs/2508.04943))
+![Static Badge](https://img.shields.io/badge/Project-https%3A%2F%2Fsites.google.com%2Fview%2Ftrkt-official%20)
+
+
+> By Zhu Xu, Ting Lei, Zhimin Li, Guan Wang, Qingchao Chen, Yuxin Peng, Yang Liu*
+> 
+> Accepted by ICCV2025 
 
 ![](/assets/pipeline_v3.png)
 ## Installation
@@ -31,7 +38,7 @@ Following PLA/env.yaml to construct the virtual environment.
 
 ## Evaluation
 
-### Object Detection Performance on Relation-Aware Transformer(TIKT) Model
+### Object Detection Performance on Relation-Aware Transformer(TRKT) Model
 ```
 cd refine
 python scripts/evaluate.py # evaluate the performance of object detection
@@ -76,6 +83,13 @@ python train.py --cfg configs/final.yml # for video SGG model
 We build our project upon [PLA](https://github.com/zjucsq/PLA/tree/master), [RAFT](https://github.com/princeton-vl/RAFT), thanks for their works.
 ## Citation
 ```
+@misc{xu2025graph,
+      title={Weakly Supervised Dynamic Scene Graph Generation with Temporal-enhanced In-domain Knowledge Transferring}, 
+      author={Zhu Xu and Ting Lei and Zhimin Li and Guan Wang and Qingchao Chen and Yuxin Peng and Yang Liu},
+      year={2025},
+      booktitle={ICCV},
+      organization={IEEE}
+}
 ```
 
 

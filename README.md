@@ -8,7 +8,7 @@
 > 
 > Accepted by ICCV2025 
 
-![](/assets/pipeline_v3.png)
+![](./assets/pipeline_v3.png)
 ## Installation
 Following PLA/env.yaml to construct the virtual environment.
 

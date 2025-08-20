@@ -1,7 +1,7 @@
 # TRKT:Weakly Supervised Dynamic Scene Graph Generation with Temporal-enhanced Relation-aware Knowledge Transferring
 [![arXiv](https://img.shields.io/badge/arXiv-2508.04943-b31b1b.svg)](https://arxiv.org/abs/2508.04943)
+ <a href="[https://hangzhang.org/](https://sites.google.com/view/trkt-official)"> <img src="https://img.shields.io/badge/&#8459-homepage-3875B7.svg?labelColor=21438A&style=plastic" height="25px">
 
-![Static Badge](https://img.shields.io/badge/Project-https%3A%2F%2Fsites.google.com%2Fview%2Ftrkt-official%20)
 
 
 > By Zhu Xu, Ting Lei, Zhimin Li, Guan Wang, Qingchao Chen, Yuxin Peng, Yang Liu*

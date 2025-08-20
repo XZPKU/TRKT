@@ -18,7 +18,7 @@ Following PLA/env.yaml to construct the virtual environment.
 
 2. For dataset, download from [Action Genome](https://github.com/JingweiJ/ActionGenome).
 
-3. Download necessary weakly-supervised annotation files and pre-trained weight (stored in [LINK](https://pan.baidu.com/s/1_b9CM8omaNwXUQsNTIfA5Q) with password 1234)), the final data structure should be like
+3. Download necessary weakly-supervised annotation files and pre-trained weight (stored in Google Drive:[Link](https://drive.google.com/drive/folders/1hYWN2fudYM3WPzzeoltFfG05_xG1ltbi?usp=sharing) or in Baidu Cloud:[Link](https://pan.baidu.com/s/1_b9CM8omaNwXUQsNTIfA5Q) with password 1234)), the final data structure should be like
 
 ```
 | -- data

@@ -1,5 +1,6 @@
 # TRKT:Weakly Supervised Dynamic Scene Graph Generation with Temporal-enhanced Relation-aware Knowledge Transferring
-[![arXiv](https://img.shields.io/badge/arXiv-<2508.04943>-<COLOR>.svg)]([https://arxiv.org/abs/https://arxiv.org/abs/2508.04943](https://arxiv.org/abs/2508.04943))
+[![arXiv](https://img.shields.io/badge/arXiv-2508.04943-b31b1b.svg)](https://arxiv.org/abs/2508.04943)
+
 ![Static Badge](https://img.shields.io/badge/Project-https%3A%2F%2Fsites.google.com%2Fview%2Ftrkt-official%20)
 
 

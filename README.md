@@ -46,7 +46,7 @@ python scripts/evaluate.py # evaluate the performance of object detection
 | Model  | AP@1 |AP@10|AR@1 | AR@10|Weight|
 | --- | ----------- |----- |----- |----- |----- |
 |PLA(baseline)    | 11.4 |11.6 |33.3 |37.6| -|
-| Ours  | 23.0|25.2|28.8|43.8|[weight](https://pan.baidu.com/s/11y79PFA7RoULOfT_OxR3-A) password 1234|
+| Ours  | 23.0|25.2|28.8|43.8|Google Drive: [weight](https://drive.google.com/file/d/12UOio_ik7s_u9VNaDDwX4rff6kV3BRTZ/view?usp=sharing)    Baidu Cloud: [weight](https://pan.baidu.com/s/11y79PFA7RoULOfT_OxR3-A) password 1234|
 
 ### Scene Graph Generation Performance on DSGG(PLA) Model
 ```
@@ -56,7 +56,7 @@ python test.py --cfg configs/final.yml # for final scene graph generation perfor
 | Model  | W/R@10|W/R@20|W/R@50|N/R@10|N/R@20|N/R@50|weight|
 | --- | ----------- |----- |----- |----- |----- |----- |----- |
 |PLA(baseline)    | 14.32|20.42|25.43|14.78|21.72|30.87|-|
-| Ours  | 17.56| 22.33|27.45| 18.76|24.49 |33.92|[weight](https://pan.baidu.com/s/1ES3J0s2L0EKb45iPuPs6-A) password 1234|
+| Ours  | 17.56| 22.33|27.45| 18.76|24.49 |33.92|Google Drive : [weight](https://drive.google.com/file/d/1I6i9uCnuhaPfd--gUXJmgZfUhtFYolxD/view?usp=sharing)    Baidu Cloud: [weight](https://pan.baidu.com/s/1ES3J0s2L0EKb45iPuPs6-A) password 1234|
 ## Training
 
 ### Step1. Optical Flow Extraction
